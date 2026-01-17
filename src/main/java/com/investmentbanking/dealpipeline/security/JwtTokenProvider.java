@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-@Component
+//@Component
 public class JwtTokenProvider {
     
     @Value("${spring.security.jwt.secret}")
