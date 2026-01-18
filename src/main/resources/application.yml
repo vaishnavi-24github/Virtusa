@@ -1,29 +1,45 @@
-spring:
-  application:
-    name: deal-pipeline-portal
+# spring:
+#   application:
+#     name: deal-pipeline-portal
 
-  data:
-    mongodb:
-      uri: ${SPRING_DATA_MONGODB_URI:mongodb://deal-pipeline-mongo:27017/deal_pipeline_db}
-      auto-index-creation: true
+#   data:
+#     mongodb:
+#       uri: ${SPRING_DATA_MONGODB_URI:mongodb://deal-pipeline-mongo:27017/deal_pipeline_db}
+#       auto-index-creation: true
 
-  security:
-    jwt:
-      secret: mySuperSecretKey12345678901234567890
-      expiration: 86400000 # 24 hours in milliseconds
+#   security:
+#     jwt:
+#       secret: mySuperSecretKey12345678901234567890
+#       expiration: 86400000 # 24 hours in milliseconds
+
+# server:
+#   port: 8081
+#   address: 0.0.0.0
+#   error:
+#     include-message: always
+#     include-binding-errors: always
+#     include-stacktrace: on_param
+#     include-exception: false
+
+# logging:
+#   level:
+#     root: INFO
+#     com.investmentbanking: DEBUG
+#     org.springframework.security: DEBUG
+#     org.springframework.data.mongodb: DEBUG
+
 
 server:
   port: 8081
-  address: 0.0.0.0
-  error:
-    include-message: always
-    include-binding-errors: always
-    include-stacktrace: on_param
-    include-exception: false
 
-logging:
-  level:
-    root: INFO
-    com.investmentbanking: DEBUG
-    org.springframework.security: DEBUG
-    org.springframework.data.mongodb: DEBUG
+spring:
+  application:
+    name: deal-pipeline
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/dealpipeline
+
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
